@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "translatechatmod",
+  "version": "1.0.0",
+  "name": "Translate Chat Mod",
+  "description": "Мод для перевода чата",
+  "authors": [
+    "YourName"
+  ],
+  "contact": {
+    "homepage": "https://example.com",
+    "sources": "https://github.com/yourname/translatechatmod"
+  },
+  "license": "MIT",
+  "icon": "assets/translatechatmod/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "com.example.translatechat.TranslateChatMod"
+    ]
+  },
+  "depends": {
+    "fabric-api": "*"
+  }
+}
