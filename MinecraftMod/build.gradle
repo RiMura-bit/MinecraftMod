@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'fabric-loom' version '0.11.1' // Версия плагина fabric-loom
+}
+
+group = 'com.example'  // Заменить на ваш groupId
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://maven.fabricmc.net/' }  // Добавляем репозиторий Fabric
+}
+
+dependencies {
+    // Зависимость на Fabric API
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.74.0+1.20"
+
+    // Зависимость на Minecraft
+    minecraft "com.mojang:minecraft:1.20.5"
+
+    // Зависимость на Yarn (версия Yarn для Minecraft 1.20.5)
+    mappings "net.fabricmc:yarn:1.20.5+build.2:v2"
+
+    // Зависимость на Fabric Loom (обязательно для сборки)
+    compileOnly "net.fabricmc:fabric-loom:0.11.1"
+}
+
+tasks {
+    // Применяем настройки к fabric.mod.json
+    processResources {
+        filesMatching("fabric.mod.json") {
+            expand(project)
+        }
+    }
+}
+
